@@ -1,0 +1,20 @@
+<div class="cont">
+    <div class="nav"></div>
+    <main>
+        <div class="cont__search">
+            <input class="item__end--input" type="search" name="searchService" placeholder="¿Buscas algún super heroe?">
+            <img class="item__end--icon" src="../../assets/icon/lupa.png" alt="search">
+          </div>
+
+          <section>
+
+            <div class="card" *ngFor="let her of heroes; let i = index">
+                <img src={{her.foto}} alt="">
+                <h1>{{her.name}}</h1>
+                <p>{{her.description}}</p>
+                <p>{{her.power}}</p>
+                <button [routerLink]="['/detail-hero']" (click)="selecHero(i)">ver detalle</button>
+            </div>
+          </section>
+    </main>
+</div>
